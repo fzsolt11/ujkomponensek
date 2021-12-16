@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+/*1.lépés: a könnyebb elrendezés végett adjunk színt a footernek*/
+/*2.lépés: növeljük meg a magasságát heigth-tel */
+/*3.lépés igazítsuk a tartalmat vízszintesen középre text-align*/
+/*4.lépés igazítsuk a tartalmat függőlegesen középre, ehhez a footer táblázátta kell alakítani égy megnövelni a szélességét */
+/*6.lépés a háttér cseréje a sárgáról az aktuálisra és egy kis bélés kialakítása*/
+/*7.lépés: a betűtípus és betűméret beállításai a teljes footerre*/
+/*8. lépés a betűszín változtatása a footer->small részében és a linkek formázása a footer-nav->a részében, le kell venni az aláhúzást és a színüket is kell változtatni*/
+/*9.lépés mivel zsúfolt a limkek rész, kell egy kis margó és betűrikítás, de mivel a link és a small inline elemek így block-kot kell belőlük csinálni, hogy legyen margójuk */
+/*10.lépés spec beállítások, pl hover a linkek esetében, illetve a CSS reset nullázta a strongot is ezért azt is be kell állítani kézzel*/
+footer {
+  background: url('https://orange.codeberryschool.com/content/images/project-assets/simple-footer.png') repeat center;/*6. lépés*/
+  height: 8rem;
+  text-align: center;
+  display: table;/* a 4. lépéshez kell, ekkor kisebb lesz a mérete mint a tárolóé*/
+  width: 100vw;/*a 4. lépéshez kell növelni kell a szélességét 100vw-ra*/
+  padding: 1rem;/*6. lépés*/
+  font-family: 'Arial', sans-serif;/*7.lépés*/
+  font-size: .875rem;/*7.lépés*/
+}
+/*5. lépés a wrappert cellává kell alakítanom így a tartalmát már függőlegesen középre lehet igazítani */
+.wrapper {
+  display: table-cell;/*5.lépés cellává alakítás*/
+  vertical-align: middle;/*5. lépés közére függőlegesen*/
+}
+footer small {
+  color: #ccc;
+  display: block; /*9.lépés így már tudok margót adni neki*/
+  margin-bottom: 1.5rem;/*9.lépés már is van mögötte margó*/
+}
+.footer-nav a {
+  text-decoration: none; /*8.lépés nem lesznek aláhúzva a linkek*/
+  color: #c74f78;
+  display: inline-block; /*9.lépés így már tudok margót adni neki a block miatt, de az inline opcióból adódóan maradnak egy sorban */
+  margin: 0.5rem;
+  
+}
+.footer-nav a:hover {
+  color: #f26896;/*erre a színre vált majd a szín*/
+  transition: color .15s ease-in-out;/*10.lépés a colort(#ccc)volt eredetileg változtatom meg #f26896 erre, és az elején és a végén gyors az effect */
+}
+strong {
+  font-weight: 700;/*a betű vastagságát állítja be*/
+}
